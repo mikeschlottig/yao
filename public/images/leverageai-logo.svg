@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .leverage { fill: #0066CC; }
+    .ai { fill: #000000; }
+  </style>
+  <text x="10" y="35" class="text leverage" font-size="28">LEVERAGE</text>
+  <text x="155" y="35" class="text ai" font-size="28">AI</text>
+</svg>

@@ -1,0 +1,101 @@
+{
+  "name": "Project",
+  "table": {
+    "name": "projects",
+    "comment": "Projects created by users"
+  },
+  "columns": [
+    {
+      "name": "id",
+      "type": "ID",
+      "comment": "Project ID"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "length": 100,
+      "comment": "Project name",
+      "index": true,
+      "nullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "length": 255,
+      "comment": "Project description",
+      "nullable": true
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "length": 50,
+      "comment": "Project type (landing_page, web_app)",
+      "nullable": false,
+      "default": "landing_page"
+    },
+    {
+      "name": "screenshot",
+      "type": "string",
+      "length": 255,
+      "comment": "Path to the screenshot image",
+      "nullable": true
+    },
+    {
+      "name": "html_code",
+      "type": "text",
+      "comment": "Generated HTML code",
+      "nullable": true
+    },
+    {
+      "name": "css_code",
+      "type": "text",
+      "comment": "Generated CSS code",
+      "nullable": true
+    },
+    {
+      "name": "js_code",
+      "type": "text",
+      "comment": "Generated JavaScript code",
+      "nullable": true
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "length": 50,
+      "comment": "Project status (draft, processing, completed)",
+      "nullable": false,
+      "default": "draft"
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp",
+      "comment": "Creation time",
+      "nullable": false
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamp",
+      "comment": "Update time",
+      "nullable": false
+    }
+  ],
+  "indexes": [
+    {
+      "name": "name_index",
+      "columns": ["name"]
+    },
+    {
+      "name": "type_index",
+      "columns": ["type"]
+    },
+    {
+      "name": "status_index",
+      "columns": ["status"]
+    }
+  ],
+  "relations": {},
+  "option": {
+    "timestamps": true,
+    "soft_deletes": true
+  }
+}

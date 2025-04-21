@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenshotToCode - App Dashboard</title>
+    <meta name="description" content="Convert screenshots to functional code with AI">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="app.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="app-body">
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.svg" alt="ScreenshotToCode Logo">
+                </a>
+            </div>
+            
+            <nav class="app-nav">
+                <ul>
+                    <li><a href="#" class="active" id="nav-projects">Projects</a></li>
+                    <li><a href="#" id="nav-templates">Templates</a></li>
+                    <li><a href="#" id="nav-settings">Settings</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="user-button">
+                    <img src="../images/avatar.png" alt="User Avatar" class="user-avatar">
+                    <span class="user-name">John Doe</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="user-dropdown">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="app-main">
+        <div class="container">
+            <!-- Projects Section -->
+            <section id="projects-section" class="app-section active">
+                <div class="section-header">
+                    <h1>My Projects</h1>
+                    <button class="cta-button" id="new-project-btn">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+                </div>
+                
+                <div class="projects-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search projects...">
+                    </div>
+                    
+                    <div class="filter-options">
+                        <select id="filter-type">
+                            <option value="all">All Types</option>
+                            <option value="landing_page">Landing Page</option>
+                            <option value="web_app">Web App</option>
+                        </select>
+                        
+                        <select id="filter-status">
+                            <option value="all">All Status</option>
+                            <option value="draft">Draft</option>
+                            <option value="processing">Processing</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        
+                        <select id="filter-sort">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="name_desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be loaded here dynamically -->
+                    <div class="project-card">
+                        <div class="project-thumbnail">
+                            <img src="../images/project-placeholder.png" alt="Project Thumbnail">
+                            <div class="project-status completed">Completed</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-commerce Landing Page</h3>
+                            <p>A modern e-commerce landing page with product showcase and call-to-action sections.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Apr 15, 2023</span>
+                                <span><i class="fas fa-tag"></i> Landing Page</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-button preview"><i class="fas fa-eye"></i></button>
+                            <button class="action-button download"><i class="fas fa-download"></i></button>
+                            <button class="action-button delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-thumbnail">
+                            <img src="../images/project-placeholder.png" alt="Project Thumbnail">
+                            <div class="project-status processing">Processing</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Task Management App</h3>
+                            <p>A web application for managing tasks with drag-and-drop functionality.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Apr 18, 2023</span>
+                                <span><i class="fas fa-tag"></i> Web App</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-button preview"><i class="fas fa-eye"></i></button>
+                            <button class="action-button download"><i class="fas fa-download"></i></button>
+                            <button class="action-button delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-thumbnail">
+                            <img src="../images/project-placeholder.png" alt="Project Thumbnail">
+                            <div class="project-status draft">Draft</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A personal portfolio website with project showcase and contact form.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-calendar"></i> Apr 10, 2023</span>
+                                <span><i class="fas fa-tag"></i> Landing Page</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-button preview"><i class="fas fa-eye"></i></button>
+                            <button class="action-button download"><i class="fas fa-download"></i></button>
+                            <button class="action-button delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-button" disabled><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            
+            <!-- Templates Section -->
+            <section id="templates-section" class="app-section">
+                <div class="section-header">
+                    <h1>Templates</h1>
+                </div>
+                
+                <div class="templates-grid">
+                    <div class="template-card">
+                        <div class="template-thumbnail">
+                            <img src="../images/template-landing.png" alt="Landing Page Template">
+                        </div>
+                        <div class="template-info">
+                            <h3>Modern Landing Page</h3>
+                            <p>A clean, responsive landing page template with hero section, features, and contact form.</p>
+                        </div>
+                        <button class="cta-button">Use Template</button>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-thumbnail">
+                            <img src="../images/template-dashboard.png" alt="Dashboard Template">
+                        </div>
+                        <div class="template-info">
+                            <h3>Admin Dashboard</h3>
+                            <p>A comprehensive admin dashboard template with charts, tables, and user management.</p>
+                        </div>
+                        <button class="cta-button">Use Template</button>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-thumbnail">
+                            <img src="../images/template-ecommerce.png" alt="E-commerce Template">
+                        </div>
+                        <div class="template-info">
+                            <h3>E-commerce Store</h3>
+                            <p>A complete e-commerce template with product listings, cart, and checkout process.</p>
+                        </div>
+                        <button class="cta-button">Use Template</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Settings Section -->
+            <section id="settings-section" class="app-section">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                </div>
+                
+                <div class="settings-container">
+                    <div class="settings-sidebar">
+                        <ul>
+                            <li><a href="#" class="active" data-tab="account">Account</a></li>
+                            <li><a href="#" data-tab="api">API Keys</a></li>
+                            <li><a href="#" data-tab="preferences">Preferences</a></li>
+                            <li><a href="#" data-tab="billing">Billing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="settings-content">
+                        <div class="settings-tab active" id="account-tab">
+                            <h2>Account Settings</h2>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" value="John Doe">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" value="john.doe@example.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" value="********">
+                                </div>
+                                
+                                <button type="submit" class="cta-button">Save Changes</button>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-tab" id="api-tab">
+                            <h2>API Keys</h2>
+                            <div class="api-key-container">
+                                <div class="api-key">
+                                    <div class="api-key-info">
+                                        <h3>OpenAI API Key</h3>
+                                        <p>Used for AI-powered code generation</p>
+                                    </div>
+                                    <div class="api-key-value">
+                                        <input type="password" value="sk-*************************" readonly>
+                                        <button class="action-button"><i class="fas fa-eye"></i></button>
+                                        <button class="action-button"><i class="fas fa-copy"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <button class="cta-button">Update API Key</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-tab" id="preferences-tab">
+                            <h2>Preferences</h2>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Theme</label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="theme" value="light" checked>
+                                            Light
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="theme" value="dark">
+                                            Dark
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="theme" value="system">
+                                            System
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Code Generation Preferences</label>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            Generate responsive code
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            Include comments
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            Optimize for performance
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            Follow accessibility guidelines
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="cta-button">Save Preferences</button>
+                            </form>
+                        </div>
+                        
+                        <div class="settings-tab" id="billing-tab">
+                            <h2>Billing</h2>
+                            <div class="current-plan">
+                                <h3>Current Plan: <span class="plan-name">Free</span></h3>
+                                <p>3 projects per month, basic code generation</p>
+                                <button class="cta-button">Upgrade Plan</button>
+                            </div>
+                            
+                            <div class="billing-history">
+                                <h3>Billing History</h3>
+                                <p>No billing history available.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- New Project Modal -->
+    <div class="modal" id="new-project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Project</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="new-project-form">
+                    <div class="form-group">
+                        <label for="project-name">Project Name</label>
+                        <input type="text" id="project-name" placeholder="Enter project name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-description">Description (Optional)</label>
+                        <textarea id="project-description" placeholder="Enter project description"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Project Type</label>
+                        <div class="project-type-options">
+                            <label class="project-type-option">
+                                <input type="radio" name="project-type" value="landing_page" checked>
+                                <div class="project-type-content">
+                                    <img src="../images/type-landing.png" alt="Landing Page">
+                                    <h3>Landing Page</h3>
+                                    <p>Create a beautiful, responsive landing page</p>
+                                </div>
+                            </label>
+                            
+                            <label class="project-type-option">
+                                <input type="radio" name="project-type" value="web_app">
+                                <div class="project-type-content">
+                                    <img src="../images/type-webapp.png" alt="Web App">
+                                    <h3>Web App</h3>
+                                    <p>Build a full-featured web application</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-screenshot">Upload Screenshot</label>
+                        <div class="file-upload">
+                            <input type="file" id="project-screenshot" accept="image/*" required>
+                            <div class="file-upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop your screenshot here or click to browse</p>
+                                <span>Supported formats: PNG, JPG, WEBP (Max 10MB)</span>
+                            </div>
+                            <div class="file-upload-preview">
+                                <img id="screenshot-preview" src="" alt="Screenshot Preview">
+                                <button type="button" class="remove-file"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="cancel-button">Cancel</button>
+                        <button type="submit" class="cta-button">Create Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Project Editor Modal -->
+    <div class="modal" id="project-editor-modal">
+        <div class="modal-content fullscreen">
+            <div class="modal-header">
+                <h2>Edit Project: <span id="editor-project-name">Project Name</span></h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="editor-container">
+                    <div class="editor-sidebar">
+                        <div class="editor-tabs">
+                            <button class="editor-tab active" data-tab="html">HTML</button>
+                            <button class="editor-tab" data-tab="css">CSS</button>
+                            <button class="editor-tab" data-tab="js">JavaScript</button>
+                        </div>
+                        
+                        <div class="editor-actions">
+                            <button class="editor-action" id="regenerate-code">
+                                <i class="fas fa-sync-alt"></i> Regenerate
+                            </button>
+                            <button class="editor-action" id="save-changes">
+                                <i class="fas fa-save"></i> Save
+                            </button>
+                            <button class="editor-action" id="preview-code">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <button class="editor-action" id="download-code">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <div class="editor-pane active" id="html-editor">
+                            <textarea id="html-code" placeholder="HTML code will appear here..."></textarea>
+                        </div>
+                        
+                        <div class="editor-pane" id="css-editor">
+                            <textarea id="css-code" placeholder="CSS code will appear here..."></textarea>
+                        </div>
+                        
+                        <div class="editor-pane" id="js-editor">
+                            <textarea id="js-code" placeholder="JavaScript code will appear here..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-preview">
+                        <div class="preview-header">
+                            <h3>Preview</h3>
+                            <div class="preview-controls">
+                                <button class="preview-control" data-device="desktop">
+                                    <i class="fas fa-desktop"></i>
+                                </button>
+                                <button class="preview-control" data-device="tablet">
+                                    <i class="fas fa-tablet-alt"></i>
+                                </button>
+                                <button class="preview-control" data-device="mobile">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </button>
+                                <button class="preview-control" id="refresh-preview">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-frame-container">
+                            <iframe id="preview-frame" src="about:blank"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

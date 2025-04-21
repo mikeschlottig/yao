@@ -1,0 +1,12 @@
+{
+  "name": "ScreenshotToCode",
+  "short": "Convert screenshots to functional code",
+  "description": "An application that turns screenshots into functional landing pages and web apps",
+  "version": "0.1.0",
+  "adminRoot": "admin",
+  "optional": {
+    "hideNotification": true,
+    "hideSetting": false
+  },
+  "xgen": "1.0"
+}

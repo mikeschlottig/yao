@@ -1,0 +1,89 @@
+{
+  "name": "Project API",
+  "version": "1.0.0",
+  "description": "API endpoints for managing projects",
+  "group": "project",
+  "guard": "bearer-jwt",
+  "paths": [
+    {
+      "path": "/projects",
+      "method": "GET",
+      "process": "scripts.project.list",
+      "in": [":query"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects/:id",
+      "method": "GET",
+      "process": "scripts.project.find",
+      "in": ["$param.id"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects",
+      "method": "POST",
+      "process": "scripts.project.create",
+      "in": [":payload"],
+      "out": {
+        "status": 201,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects/:id",
+      "method": "PUT",
+      "process": "scripts.project.update",
+      "in": ["$param.id", ":payload"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects/:id",
+      "method": "DELETE",
+      "process": "scripts.project.delete",
+      "in": ["$param.id"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects/:id/generate",
+      "method": "POST",
+      "process": "scripts.project.generate",
+      "in": ["$param.id", ":payload"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    },
+    {
+      "path": "/projects/:id/preview",
+      "method": "GET",
+      "process": "scripts.project.preview",
+      "in": ["$param.id"],
+      "out": {
+        "status": 200,
+        "type": "text/html"
+      }
+    },
+    {
+      "path": "/upload/screenshot",
+      "method": "POST",
+      "process": "scripts.project.uploadScreenshot",
+      "in": [":file"],
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    }
+  ]
+}
